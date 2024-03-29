@@ -30,17 +30,19 @@
 
 - employee_id: идентификатор сотрудника (первичный ключ, serial)
 - full_name: ФИО сотрудника (varchar(100))
-salary: Оклад сотрудника (numeric)
-position: Должность сотрудника (varchar(100))
-department_type: Тип подразделения (varchar(50))
-department_structure: Структурное подразделение (varchar(100))
-hire_date: Дата найма (date)
-branch_address: Адрес филиала (varchar(200))
-assigned_project: Проект, на который назначен сотрудник (varchar(200))
+- salary: Оклад сотрудника (numeric)
+- position: Должность сотрудника (varchar(100))
+- department_type: Тип подразделения (varchar(50))
+- department_structure: Структурное подразделение (varchar(100))
+- hire_date: Дата найма (date)
+- branch_address: Адрес филиала (varchar(200))
+- assigned_project: Проект, на который назначен сотрудник (varchar(200))
+
 Структурные подразделения (Departments)
 
-department_id: идентификатор подразделения (первичный ключ, serial)
-department_name: Название подразделения (varchar(100))
+- department_id: идентификатор подразделения (первичный ключ, serial)
+- department_name: Название подразделения (varchar(100))
+
 Проекты (Projects)
 
 project_id: идентификатор проекта (первичный ключ, serial)
