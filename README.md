@@ -26,6 +26,52 @@
 ### Решение 1
 [Tables](https://github.com/sash3939/DataBase_12module/assets/156709540/769f8000-f9cd-4f30-8675-6b262b088bf1)
 
+Сотрудники (Employees)
+
+- employee_id: идентификатор сотрудника (первичный ключ, serial)
+- full_name: ФИО сотрудника (varchar(100))
+salary: Оклад сотрудника (numeric)
+position: Должность сотрудника (varchar(100))
+department_type: Тип подразделения (varchar(50))
+department_structure: Структурное подразделение (varchar(100))
+hire_date: Дата найма (date)
+branch_address: Адрес филиала (varchar(200))
+assigned_project: Проект, на который назначен сотрудник (varchar(200))
+Структурные подразделения (Departments)
+
+department_id: идентификатор подразделения (первичный ключ, serial)
+department_name: Название подразделения (varchar(100))
+Проекты (Projects)
+
+project_id: идентификатор проекта (первичный ключ, serial)
+project_name: Название проекта (varchar(100))
+project_description: Описание проекта (text)
+start_date: Дата начала проекта (date)
+end_date: Дата окончания проекта (date)
+Филиалы (Branches)
+
+branch_id: идентификатор филиала (первичный ключ, serial)
+branch_name: Название филиала (varchar(100))
+branch_location: Местоположение филиала (varchar(200))
+branch_address: Адрес филиала (varchar(200))
+Задачи (Tasks)
+
+task_id: идентификатор задачи (первичный ключ, serial)
+task_name: Название задачи (varchar(200))
+task_description: Описание задачи (text)
+task_status: Статус задачи (varchar(50))
+assigned_to_employee_id: Идентификатор сотрудника, к которому назначена задача (внешний ключ, integer)
+Компетенции QA (QA_Competencies)
+
+competency_id: идентификатор компетенции QA (первичный ключ, serial)
+competency_name: Название компетенции QA (varchar(100))
+Назначенные задачи (Assigned_Tasks)
+
+assignment_id: идентификатор назначения задачи (первичный ключ, serial)
+employee_id: Идентификатор сотрудника, к которому назначена задача (внешний ключ, integer)
+task_id: Идентификатор задачи (внешний ключ, integer)
+assignment_date: Дата назначения задачи (date)
+
 serial: integer auto_increment
 varchar(n): строка переменной длины с максимальной длиной n
 numeric: числовой тип данных с фиксированной точностью и масштабом
