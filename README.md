@@ -29,7 +29,8 @@
 Сотрудники (Employees)
 
 - employee_id: идентификатор сотрудника (первичный ключ, serial)
-- full_name: ФИО сотрудника (varchar(100))
+- surname: фамилия сотрудника (varchar(50))
+- name: имя сотрудника (varchar(50))
 - salary: Оклад сотрудника (numeric)
 - position: Должность сотрудника (varchar(100))
 - department_type: Тип подразделения (varchar(50))
