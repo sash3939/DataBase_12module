@@ -24,68 +24,67 @@
 - идентификатор структурного подразделения, внешний ключ, integer).
 
 ### Решение 1
-[Tables](https://github.com/sash3939/DataBase_12module/assets/156709540/769f8000-f9cd-4f30-8675-6b262b088bf1)
-
-Сотрудники (Employees)
-
-- employee_id: идентификатор сотрудника (первичный ключ, serial)
-- surname: фамилия сотрудника (varchar(50))
-- name: имя сотрудника (varchar(50))
-- salary: Оклад сотрудника (numeric)
-- position: Должность сотрудника (varchar(100))
-- department_type: Тип подразделения (varchar(50))
-- department_structure: Структурное подразделение (varchar(100))
-- hire_date: Дата найма (date)
-- branch_address: Адрес филиала (varchar(200))
-- assigned_project: Проект, на который назначен сотрудник (varchar(200))
-
-Структурные подразделения (Departments)
-
-- department_id: идентификатор подразделения (первичный ключ, serial)
-- department_name: Название подразделения (varchar(100))
-
-Проекты (Projects)
-
-- project_id: идентификатор проекта (первичный ключ, serial)
-- project_name: Название проекта (varchar(100))
-- project_description: Описание проекта (text)
-- start_date: Дата начала проекта (date)
-- end_date: Дата окончания проекта (date)
-
-Филиалы (Branches)
-
-- branch_id: идентификатор филиала (первичный ключ, serial)
-- branch_name: Название филиала (varchar(100))
-- branch_location: Местоположение филиала (varchar(200))
-- branch_address: Адрес филиала (varchar(200))
-
-Задачи (Tasks)
-
-- task_id: идентификатор задачи (первичный ключ, serial)
-- task_name: Название задачи (varchar(200))
-- task_description: Описание задачи (text)
-- task_status: Статус задачи (varchar(50))
-- assigned_to_employee_id: Идентификатор сотрудника, к которому назначена задача (внешний ключ, integer)
-
-Компетенции QA (QA_Competencies)
-
-- competency_id: идентификатор компетенции QA (первичный ключ, serial)
-- competency_name: Название компетенции QA (varchar(100))
-
-Назначенные задачи (Assigned_Tasks)
-
-- assignment_id: идентификатор назначения задачи (первичный ключ, serial)
-- employee_id: Идентификатор сотрудника, к которому назначена задача (внешний ключ, integer)
-- task_id: Идентификатор задачи (внешний ключ, integer)
-- assignment_date: Дата назначения задачи (date)
+[Table](https://github.com/sash3939/DataBase_12module/assets/156709540/a7ce00f5-920b-4186-b058-83b851f307fe)
 
 
----
-serial: integer auto_increment
-varchar(n): строка переменной длины с максимальной длиной n
-numeric: числовой тип данных с фиксированной точностью и масштабом
-date: тип для хранения даты
-text: строка переменной длины, предназначенная для хранения больших объемов текста
+Адрес
+
+- address_id индентификатор (первичный ключ, integer)
+- address адрес (varchar(100))
+- branch_region идентификатор региона  (внешний ключ, integer)
+- branch_city идентификатор города (внешний ключ, integer)
+
+Регион
+
+- region_id (первичный ключ, integer)
+- name_region (varchar(100))
+
+Город
+
+- city_id (первичный ключ, integer)
+- name_city (varchar(100))
+
+Тип подразделения 
+- dep_type_id (первичный ключ, integer)
+- name_dep название типа подразделения (varchar(50))
+
+Структурные подразделения
+
+- department_id идентификатор подразделения (первичный ключ, integer)
+- dep_to_type идентификатор типа  (внешний ключ, integer)
+- department_name название подразделения (varchar(100))
+
+
+Сотрудники
+
+- employee_id идентификатор должности сотрудника (первичный ключ, integer)
+- title_id идентификатор должности (внешний ключ, integer)
+- last_name Фамилия сотрудника (varchar(50))
+- first_name Имя сотрудника (varchar(30))
+- middle_name Отчество (varchar(30))
+- salary Оклад (numeric)
+- hire_data Дата найма (date)
+- structural_dep_id индентификатор стурктурного подразделения (внешний ключ, integer)
+- address_id идентификатор адреса (внешний ключ, integer)
+
+Должность
+
+- title_id: идентификатор должности (первичный ключ, integer)
+- title должность (varchar(100))
+
+
+Проекты
+
+- project_id идентификатор проекта (первичный ключ, integer)
+- project_name название проекта (varchar(100))
+- project_description описание проекта (text)
+- start_date Дата начала проекта (date)
+- end_date Дата окончания проекта (date)
+
+Назначения на проект
+
+- employee_id идентификатор сотрудника (внешний ключ, integer)
+- project_id идентификатор проекта (внешний ключ, integer)
 
 
 ## Дополнительные задания (со звёздочкой*)
